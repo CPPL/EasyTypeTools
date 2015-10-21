@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="content" method="upgrade">
+    <name>plg_content_easytypetools</name>
+    <author>Craig Phillips</author>
+    <creationDate>##CREATEDATE##</creationDate>
+    <copyright>Copyright © 2015 Craig Phillips Pty Ltd. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <authorEmail>support@seepeoplesoftware.com</authorEmail>
+    <authorUrl>seepeoplesoftware.com</authorUrl>
+    <version>##VER## (##COMHASH##)</version>
+    <description>PLG_CONTENT_EASYTYPETOOLS_XML_DESCRIPTION</description>
+    <files>
+        <filename plugin="easytypetools">easytypetools.php</filename>
+        <filename>easytypetoolshelper.php</filename>
+        <folder>language</folder>
+    </files>
+    <!--@PROBLOCK_START@-->
+    <media destination="plg_content_easytypetools" folder="media">
+        <folder>3.2.1</folder>
+        <folder>4.4.0</folder>
+    </media>
+    <!--@PROBLOCK_END@-->
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <!--@PROBLOCK_START@-->
+                <field name="enable_fa" type="radio"
+                       default="0"
+                       description="PLG_CONTENT_EASYTYPETOOLS_FA_ENABLED_DESC"
+                       label="PLG_CONTENT_EASYTYPETOOLS_FA_ENABLED_LABEL">
+                    <option value="0">JOFF</option>
+                    <option value="1">JON</option>
+                </field>
+            </fieldset>
+            <fieldset name="PLG_CONTENT_EASYTYPETOOLS_FA_SETTINGS">
+                <!--@PROBLOCK_END@-->
+                <field name="version" type="list"
+                       default="latest"
+                       description="PLG_CONTENT_EASYTYPETOOLS_FA_VERSION_DESC"
+                       label="PLG_CONTENT_EASYTYPETOOLS_FA_VERSION_LABEL">
+                    <option value="latest">PLG_CONTENT_EASYTYPETOOLS_FA_LATEST_VERSION_LABEL</option>
+                    <option value="4.4.0">4.4.0</option>
+                    <option value="3.2.1">3.2.1</option>
+                </field>
+                <!--@PROBLOCK_START@-->
+                <field name="source"
+                       type="list"
+                       default="1"
+                       label="PLG_CONTENT_EASYTYPETOOLS_FA_SOURCE_LABEL"
+                       description="PLG_CONTENT_EASYTYPETOOLS_FA_SOURCE_DESC">
+                    <option value="1">PLG_CONTENT_EASYTYPETOOLS_FA_SOURCE_CDN</option>
+                    <option value="0">PLG_CONTENT_EASYTYPETOOLS_FA_SOURCE_LOCAL</option>
+                </field>
+                <!--@PROBLOCK_END@-->
+            </fieldset>
+        </fields>
+    </config>
+</extension>
