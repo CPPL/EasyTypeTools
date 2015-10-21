@@ -12,7 +12,8 @@ defined('_JEXEC') or die('Restricted access');
 class EasyTypeToolsHelper
 {
     /**@PROBLOCK_START@**/
-    private $pro = true;
+    const pro = true;
+    const latest_version = '4.4.0';
     /**@PROBLOCK_END@**/
 
     public static function buildFontAwesomeLink($params)
@@ -27,19 +28,20 @@ class EasyTypeToolsHelper
         $version   = $params->get('version', 'latest');
 
         /**@PROBLOCK_START@**/
-        if (self::$pro) {
+        if (self::pro) {
             $enable_fa = $params->get('enable_fa', 1);
             $cdn       = (bool)$params->get('source', true);
-            $min       = JDEBUG ? '' : $min;
+            $min       = JDEBUG ? '' : '.min';
 
             if ($enable_fa) {
                 if($cdn) {
                     $fa_link = <<<facdnlink
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/$version/css/font-awesome$min.css">
+https://maxcdn.bootstrapcdn.com/font-awesome/$version/css/font-awesome$min.css
 facdnlink;
                 } else {
+                    $version = self::latest_version;
                     $fa_link = <<<falink
-    <link rel="stylesheet" href="/media/plg_content_easytypetools/$version/font-awesome/css/font-awesome$min.css">
+/media/plg_content_easytypetools/$version/font-awesome/css/font-awesome$min.css
 falink;
                 }
             } else {
@@ -49,12 +51,12 @@ falink;
             /**@PROBLOCK_END@**/
 
             $fa_link = <<<facdnlink
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/$version/css/font-awesome.min.css">
+https://maxcdn.bootstrapcdn.com/font-awesome/$version/css/font-awesome.min.css
 facdnlink;
 
-            /**@PROBLOCK_START**/
+            /**@PROBLOCK_START@**/
         }
-        /**@PROBLOCK_END@* */
+        /**@PROBLOCK_END@**/
 
         return $fa_link;
     }
