@@ -32,7 +32,7 @@
                     <option value="1">JON</option>
                 </field>
             </fieldset>
-            <fieldset name="PLG_CONTENT_EASYTYPETOOLS_FA_SETTINGS">
+            <fieldset name="fa_settings" label="PLG_CONTENT_EASYTYPETOOLS_FA_SETTINGS">
                 <!--@PROBLOCK_END@-->
                 <field name="version" type="list"
                        default="latest"
