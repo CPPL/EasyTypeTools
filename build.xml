@@ -45,6 +45,8 @@
     <!-- ============================================  -->
     <!--                  FILESETS                     -->
     <!-- ============================================  -->
+    <!-- The copy needs to ignore certain unneeded     -->
+    <!-- files from git and the OS etc.                -->
     <!-- The copy needs to ignore certain unneeded files from git and the OS etc. -->
     <fileset dir="${repo}" id="content_repo">
         <include name="**"/>
@@ -52,6 +54,16 @@
         <exclude name=".gitignore"/>
         <exclude name=".DS_Store"/>
         <exclude name="**/.idea/**"/>
+    </fileset>
+
+    <!-- Free version doesn't need /media directory    -->
+    <fileset dir="${repo}" id="content_repo_free">
+        <include name="**"/>
+        <exclude name="**/.git/**"/>
+        <exclude name=".gitignore"/>
+        <exclude name=".DS_Store"/>
+        <exclude name="**/.idea/**"/>
+        <exclude name="media/**" />
     </fileset>
 
     <!-- ============================================  -->
@@ -127,7 +139,7 @@
     <target name="build_free" depends="prepare">
         <echo msg="Copying GIT Repo to ${buildDir} from ${repo} for ${freeOrPro}..."/>
         <copy todir="${buildDir}">
-            <fileset refid="content_repo"/>
+            <fileset refid="content_repo_free"/>
             <filterchain refid="free_std_tokens"/>
             <filterchain refid="procode_block"/>
         </copy>
