@@ -2,7 +2,7 @@
 <project name="EasyTypeTools" default="package" basedir="./">
     <property name="name"         value="easytypetools"/>
     <property name="type"         value="plg"/>
-    <property name="subtype"      value="_content"/>
+    <property name="subtype"      value="_system"/>
     <property name="extension"    value="${type}${subtype}_${name}"/>
     <property name="repo"         value="${extension}"/>
     <property name="devBuildsDir" value="./_Dev_Builds"/>
