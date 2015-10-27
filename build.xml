@@ -148,7 +148,7 @@
         </copy>
         <phingcall target="CreateArchives">
             <property name="freeOrPro" value="${freeOrPro}" override="true"/>
-            <property name="ffop" value="${ffop}" override="true"/>
+            <property name="ffop" value="" override="true"/>
         </phingcall>
 
         <!-- Remove the leftover buildDir -->
