@@ -13,7 +13,7 @@ defined('_JEXEC') or die('Restricted access');
  *
  */
 
-class plgContentEasyTypeTools extends JPlugin
+class plgSystemEasyTypeTools extends JPlugin
 {
     protected $trackAdmin;
 
@@ -47,7 +47,7 @@ class plgContentEasyTypeTools extends JPlugin
      *
      * Please note this is not a real event method, it's just an example of the form they take
      */
-    function onContentPrepare()
+    function onBeforeCompileHead()
     {
         if ($this->weAreDoingIt) {
             // Build the CSS Links
