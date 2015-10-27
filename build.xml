@@ -63,7 +63,10 @@
         <exclude name=".gitignore"/>
         <exclude name=".DS_Store"/>
         <exclude name="**/.idea/**"/>
-        <exclude name="media/**" />
+        <exclude name="media/css/dark/keys_*.css" />
+        <exclude name="media/css/light/keys_*.css" />
+        <exclude name="media/css/**/*.min.css" />
+        <exclude name="media/font-awesome/**" />
     </fileset>
 
     <!-- ============================================  -->
