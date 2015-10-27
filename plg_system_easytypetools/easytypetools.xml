@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension version="2.5" type="plugin" group="content" method="upgrade">
-    <name>plg_content_easytypetools</name>
+<extension version="2.5" type="plugin" group="system" method="upgrade">
+    <name>plg_system_easytypetools</name>
     <author>Craig Phillips</author>
     <creationDate>##CREATEDATE##</creationDate>
     <copyright>Copyright © 2015 Craig Phillips Pty Ltd. All rights reserved.</copyright>
