@@ -1,0 +1,73 @@
+/**
+ * EasyTypeTools keys.css
+ *
+ * @author Craig Phillips
+ * @copyright Copyright © 2015 Craig Phillips Pty Ltd - All rights reserved.
+ * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL, see LICENSE file
+ *
+ */
+
+kbd,
+.key {
+    color: rgb(238, 238, 238);
+    font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+    font-size: 0.9em;
+    font-weight: normal;
+    font-style: normal;
+    text-align: center;
+    line-height: 1em;
+    text-shadow: 0 -1px 0 rgb(0, 0, 0);
+    display: inline;
+    padding: .3em .55em;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid rgb(0, 0, 0);
+    background-color: rgb(77,76,76);
+    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0));
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(0, 0, 0, 0.5)), color-stop(80%, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0)));
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0));
+    background-image: -o-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0));
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0));
+    background-repeat: no-repeat;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=0);
+    box-shadow: 0px 2px 0 rgb(0, 0, 0), 0 3px 1px rgb(153, 153, 153), inset 0 1px 1px rgb(170, 170, 170), inset 0 -1px 3px rgb(39, 39, 39);
+    margin:0 0.1em;
+}
+
+kbd.keyboard, kbd.menu {
+    border:1px solid rgb(77,76,76);
+    padding: 0.5em;
+    border-radius:0;
+    box-shadow: none;
+    color: rgb(102, 102, 102)
+}
+
+kbd.menu kbd {
+    border:none;
+    border-radius:0px;
+    box-shadow: none
+}
+
+kbd:hover,
+.key:hover {
+    background: rgb(90, 90, 90) linear-gradient(to bottom, rgb(90, 90, 90), rgb(110, 110, 110));
+    text-decoration: none;
+}
+kbd.keyboard:hover, kbd.menu:hover {
+    background-color: rgb(77,76,76);
+    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0));
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(rgba(0, 0, 0, 0.5)), color-stop(80%, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0)));
+    background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0));
+    background-image: -o-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0));
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0));
+}
+
+kbd[title],
+.key[title] {
+    cursor: help;
+}
+

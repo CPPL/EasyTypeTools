@@ -16,24 +16,31 @@
     </files>
     <!--@PROBLOCK_START@-->
     <media destination="plg_content_easytypetools" folder="media">
-        <folder>3.2.1</folder>
-        <folder>4.4.0</folder>
+        <folder>css</folder>
+        <folder>font-awesome</folder>
     </media>
     <!--@PROBLOCK_END@-->
     <config>
         <fields name="params">
             <fieldset name="basic">
-                <!--@PROBLOCK_START@-->
                 <field name="enable_fa" type="radio"
+                       class="btn-group btn-group-yesno"
                        default="0"
                        description="PLG_CONTENT_EASYTYPETOOLS_FA_ENABLED_DESC"
                        label="PLG_CONTENT_EASYTYPETOOLS_FA_ENABLED_LABEL">
                     <option value="0">JOFF</option>
                     <option value="1">JON</option>
                 </field>
+                <field name="enable_kbd" type="radio"
+                       class="btn-group btn-group-yesno"
+                       default="0"
+                       description="PLG_CONTENT_EASYTYPETOOLS_KBD_ENABLED_DESC"
+                       label="PLG_CONTENT_EASYTYPETOOLS_KBD_ENABLED_LABEL">
+                    <option value="0">JOFF</option>
+                    <option value="1">JON</option>
+                </field>
             </fieldset>
             <fieldset name="fa_settings" label="PLG_CONTENT_EASYTYPETOOLS_FA_SETTINGS">
-                <!--@PROBLOCK_END@-->
                 <field name="version" type="list"
                        default="latest"
                        description="PLG_CONTENT_EASYTYPETOOLS_FA_VERSION_DESC"
@@ -50,6 +57,28 @@
                        description="PLG_CONTENT_EASYTYPETOOLS_FA_SOURCE_DESC">
                     <option value="1">PLG_CONTENT_EASYTYPETOOLS_FA_SOURCE_CDN</option>
                     <option value="0">PLG_CONTENT_EASYTYPETOOLS_FA_SOURCE_LOCAL</option>
+                </field>
+                <!--@PROBLOCK_END@-->
+            </fieldset>
+            <fieldset name="kbd_settings" label="PLG_CONTENT_EASYTYPETOOLS_KBD_SETTINGS">
+                <!-- 'dark_bkgnd' maps to light coloured buttons. -->
+                <field name="bkgnd_css" type="list"
+                       default="light_bkgnd"
+                       description="PLG_CONTENT_EASYTYPETOOLS_KBD_CSS_DEFAULT_DESC"
+                       label="PLG_CONTENT_EASYTYPETOOLS_KBD_CSS_DEFAULT_LABEL">
+                    <option value="dark">PLG_CONTENT_EASYTYPETOOLS_KBD_CSS_DARK</option>
+                    <option value="light">PLG_CONTENT_EASYTYPETOOLS_KBD_CSS_LIGHT</option>
+                </field>
+                <!--@PROBLOCK_START@-->
+                <field name="theme"
+                       type="list"
+                       default=""
+                       label="PLG_CONTENT_EASYTYPETOOLS_KBD_THEME_LABEL"
+                       description="PLG_CONTENT_EASYTYPETOOLS_KBD_THEME_DESC">
+                    <option value="apple">PLG_CONTENT_EASYTYPETOOLS_KBD_THEME_APPLE</option>
+                    <option value="heavy">PLG_CONTENT_EASYTYPETOOLS_KBD_THEME_HEAVY</option>
+                    <option value="">PLG_CONTENT_EASYTYPETOOLS_KBD_THEME_LIGHT</option>
+                    <option value="retro">PLG_CONTENT_EASYTYPETOOLS_KBD_THEME_RETRO</option>
                 </field>
                 <!--@PROBLOCK_END@-->
             </fieldset>

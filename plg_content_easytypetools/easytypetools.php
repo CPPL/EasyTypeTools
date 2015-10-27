@@ -51,7 +51,8 @@ class plgContentEasyTypeTools extends JPlugin
     {
         if ($this->weAreDoingIt) {
             // Build the CSS Links
-            $links[] = EasyTypeToolsHelper::buildFontAwesomeLink($this->params, $this->website_GoSqr_Token);
+            $links[] = EasyTypeToolsHelper::buildFontAwesomeLink($this->params);
+            $links[] = EasyTypeToolsHelper::buildKBDLink($this->params);
 
             // Add CSS links to document
             EasyTypeToolsHelper::addLinksToDoc($links, 'css');

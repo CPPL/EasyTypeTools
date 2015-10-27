@@ -1,0 +1,64 @@
+/**
+ * EasyTypeTools keys.css
+ *
+ * @author Craig Phillips
+ * @copyright Copyright © 2015 Craig Phillips Pty Ltd - All rights reserved.
+ * @license http://www.gnu.org/copyleft/gpl.html GNU/GPL, see LICENSE file
+ *
+ */
+
+kbd,
+.key {
+    background-color: rgb(247, 247, 247);
+    border:1px solid rgb(204, 204, 204);
+    -webkit-border-radius: 0.3em;
+    -moz-border-radius: 0.3em;
+    border-radius: 0.3em;;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.6), 0 2px 3px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    display:inline-block;
+    font-family: system, -apple-system, ".SFNSDisplay-Regular", "Helvetica Neue", "Lucida Grande", sans-serif;
+    font-size:0.9em;
+    line-height:1.4;
+    margin:0 0.1em;
+    padding:0.1em 0.6em;
+    text-shadow:0 0.1em 0 rgb(255, 255, 255);
+    white-space:nowrap;
+    background-color: rgb(183, 183, 188);
+    border-top-color: rgba(0, 0, 0, 0.4);
+    background-image: -moz-linear-gradient(top, rgb(239, 239, 240), rgb(183, 183, 188));
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(rgb(240, 240, 240)), to(rgb(183, 183, 188)));
+    background-image: -webkit-linear-gradient(top, rgb(240, 240, 240), rgb(183, 183, 188));
+    background-image: -o-linear-gradient(top, rgb(240, 240, 240), rgb(183, 183, 188));
+    background-image: linear-gradient(top, rgb(240, 240, 240), rgb(183, 183, 188));
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffefeff0', endColorstr='#ffb7b7bc', GradientType=0);
+}
+
+kbd.keyboard, kbd.menu {
+    border:1px solid rgb(239, 239, 239);
+    border-radius:0;
+    box-shadow: none;
+    color: rgb(102, 102, 102);
+    background: none;
+}
+
+kbd.menu kbd {
+    border:none;
+    border-radius:0px;
+    box-shadow: none
+}
+
+kbd:hover,
+.key:hover {
+    background: rgb(179, 179, 179) linear-gradient(to bottom, rgb(179, 179, 179), rgb(214, 214, 214));
+    text-decoration: none;
+}
+kbd.keyboard:hover, kbd.menu:hover {
+    background: none;
+}
+
+kbd[title],
+.key[title] {
+    cursor: help;
+}

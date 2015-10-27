@@ -16,49 +16,86 @@ class EasyTypeToolsHelper
     const latest_version = '4.4.0';
     /**@PROBLOCK_END@**/
 
+    /**
+     * Assemble our link to the Font Awesome resources
+     *
+     * @param Joomla\Registry\Registry $params
+     *
+     * @return string
+     */
     public static function buildFontAwesomeLink($params)
     {
-        $link = self::fa_link($params);
+        $version = $params->get('version', 'latest');
+        $enabled  = $params->get('enable_fa', 0);
+
+
+        if ($enabled) {
+        /**@PROBLOCK_START@**/
+            if (self::pro) {
+                $cdn = (bool)$params->get('source', true);
+                $min = JDEBUG ? '' : '.min';
+                    if ($cdn) {
+                        $link = "https://maxcdn.bootstrapcdn.com/font-awesome/$version/css/font-awesome$min.css";
+                    } else {
+                        $version = $version == 'latest' ? self::latest_version : $version;
+                        $link    = "/media/plg_content_easytypetools/font-awesome/$version/css/font-awesome$min.css";
+                    }
+            } else {
+                /**@PROBLOCK_END@**/
+
+                $link = "https://maxcdn.bootstrapcdn.com/font-awesome/$version/css/font-awesome.min.css";
+
+                /**@PROBLOCK_START@**/
+            }
+        /**@PROBLOCK_END@**/
+        } else {
+            $link = '';
+        }
 
         return $link;
     }
 
-    private static function fa_link($params)
-    {
-        $version   = $params->get('version', 'latest');
+    /**
+     * Assemble our link to the correct KDB element CSS
+     *
+     * @param Joomla\Registry\Registry $params
+     *
+     * @return string
+     */
+    public static function buildKBDLink($params) {
+        $enabled    = (bool)$params->get('enable_kbd', 0);
+        $bkgnd_css = $params->get('bkgnd_css', 'light');
 
-        /**@PROBLOCK_START@**/
-        if (self::pro) {
-            $enable_fa = $params->get('enable_fa', 1);
-            $cdn       = (bool)$params->get('source', true);
-            $min       = JDEBUG ? '' : '.min';
-
-            if ($enable_fa) {
-                if($cdn) {
-                    $fa_link = <<<facdnlink
-https://maxcdn.bootstrapcdn.com/font-awesome/$version/css/font-awesome$min.css
-facdnlink;
-                } else {
-                    $version = self::latest_version;
-                    $fa_link = <<<falink
-/media/plg_content_easytypetools/$version/font-awesome/css/font-awesome$min.css
-falink;
-                }
-            } else {
-                $fa_link = '';
-            }
-        } else {
-            /**@PROBLOCK_END@**/
-
-            $fa_link = <<<facdnlink
-https://maxcdn.bootstrapcdn.com/font-awesome/$version/css/font-awesome.min.css
-facdnlink;
-
+        if ($enabled) {
             /**@PROBLOCK_START@**/
-        }
-        /**@PROBLOCK_END@**/
+            if (self::pro) {
+                $theme = $params->get('theme', '');
+                $theme = empty($theme) ? '' : '_' . $theme;
+                /** @todo Remove next line to renable themes $theme */
+                $min = JDEBUG ? '' : '.min';
 
-        return $fa_link;
+                if ($enabled) {
+                    $link = "/media/plg_content_easytypetools/css/$bkgnd_css/keys$theme$min.css";
+                } else {
+                    $link = '';
+                }
+
+// @todo If theme is Droid add this Google CDN version of Roboto font.
+// <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+            } else {
+                /**@PROBLOCK_END@**/
+
+                $link = "/media/plg_content_easytypetools/css/$bkgnd_css/keys.css";
+
+                /**@PROBLOCK_START@**/
+            }
+            /**@PROBLOCK_END@**/
+        } else {
+            $link = '';
+        }
+
+        return $link;
     }
 
     /**
@@ -79,6 +116,10 @@ facdnlink;
             $doc = JFactory::getDocument();
 
             foreach ($links as $link) {
+                if (empty($link)) {
+                    continue;
+                }
+
                 if ($type == 'js') {
                     $doc->addScript($link, "text/javascript");
                 } elseif ($type == 'css') {
