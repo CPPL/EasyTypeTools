@@ -38,7 +38,7 @@ class EasyTypeToolsHelper
                         $link = "https://maxcdn.bootstrapcdn.com/font-awesome/$version/css/font-awesome$min.css";
                     } else {
                         $version = $version == 'latest' ? self::latest_version : $version;
-                        $link    = "/media/plg_content_easytypetools/font-awesome/$version/css/font-awesome$min.css";
+                        $link    = "/media/plg_system_easytypetools/font-awesome/$version/css/font-awesome$min.css";
                     }
             } else {
                 /**@PROBLOCK_END@**/
@@ -75,7 +75,7 @@ class EasyTypeToolsHelper
                 $min = JDEBUG ? '' : '.min';
 
                 if ($enabled) {
-                    $link = "/media/plg_content_easytypetools/css/$bkgnd_css/keys$theme$min.css";
+                    $link = "/media/plg_system_easytypetools/css/$bkgnd_css/keys$theme$min.css";
                 } else {
                     $link = '';
                 }
@@ -86,7 +86,7 @@ class EasyTypeToolsHelper
             } else {
                 /**@PROBLOCK_END@**/
 
-                $link = "/media/plg_content_easytypetools/css/$bkgnd_css/keys.css";
+                $link = "/media/plg_system_easytypetools/css/$bkgnd_css/keys.css";
 
                 /**@PROBLOCK_START@**/
             }

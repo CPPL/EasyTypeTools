@@ -15,7 +15,7 @@
         <folder>language</folder>
     </files>
     <!--@PROBLOCK_START@-->
-    <media destination="plg_content_easytypetools" folder="media">
+    <media destination="plg_system_easytypetools" folder="media">
         <folder>css</folder>
         <folder>font-awesome</folder>
     </media>

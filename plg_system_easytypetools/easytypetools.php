@@ -72,7 +72,7 @@ class plgContentEasyTypeTools extends JPlugin
      */
     private function areWeDoingThis() {
         // Check the installation
-        $path_to_helper = JPATH_PLUGINS . '/content/easytypetools/easytypetoolshelper.php';
+        $path_to_helper = JPATH_PLUGINS . '/system/easytypetools/easytypetoolshelper.php';
 
         if (file_exists($path_to_helper)) {
             // Yes! Now lets get the helper
