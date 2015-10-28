@@ -2,7 +2,7 @@
 <project name="EasyTypeTools" default="package" basedir="./">
     <property name="name"         value="easytypetools"/>
     <property name="type"         value="plg"/>
-    <property name="subtype"      value="_content"/>
+    <property name="subtype"      value="_system"/>
     <property name="extension"    value="${type}${subtype}_${name}"/>
     <property name="repo"         value="${extension}"/>
     <property name="devBuildsDir" value="./_Dev_Builds"/>
@@ -63,7 +63,10 @@
         <exclude name=".gitignore"/>
         <exclude name=".DS_Store"/>
         <exclude name="**/.idea/**"/>
-        <exclude name="media/**" />
+        <exclude name="media/css/dark/keys_*.css" />
+        <exclude name="media/css/light/keys_*.css" />
+        <exclude name="media/css/**/*.min.css" />
+        <exclude name="media/font-awesome/**" />
     </fileset>
 
     <!-- ============================================  -->
@@ -145,7 +148,7 @@
         </copy>
         <phingcall target="CreateArchives">
             <property name="freeOrPro" value="${freeOrPro}" override="true"/>
-            <property name="ffop" value="${ffop}" override="true"/>
+            <property name="ffop" value="" override="true"/>
         </phingcall>
 
         <!-- Remove the leftover buildDir -->
